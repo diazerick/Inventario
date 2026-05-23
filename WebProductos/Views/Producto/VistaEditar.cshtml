@@ -1,0 +1,58 @@
+﻿@using WebProductos.Models
+
+@model E_Producto
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VistaEditar</title>
+    <!--Agregando los archivos de bootstrap-->
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Producto: @Model.Descripcion</h1>
+
+        <form action="/Producto/Editar" method="post">
+            <input type="hidden" name="IdProducto" value="@Model.IdProducto"/>
+
+            <label>Descripción</label>
+            <input type="text" name="Descripcion" class="form-control" value="@Model.Descripcion" required />
+            <br />
+            <label>Precio</label>
+            <input type="text" name="Precio" class="form-control" value="@Model.Precio" required />
+            <br />
+            <label>Fecha Ingreso</label>
+            <input type="date" name="FechaIngreso" class="form-control" value="@Model.FechaIngreso.ToString("yyyy-MM-dd")" required />
+            <br />
+            <label>¿Esta Disponible?</label>
+            <div>
+                @if (Model.Disponible == true)
+                {
+                    <input type="radio" name="Disponible" value="true" required checked />
+                    <label>Si</label>
+
+                    <input type="radio" name="Disponible" value="false" />
+                    <label>No</label>
+                }
+                else
+                {
+                    <input type="radio" name="Disponible" value="true" required />
+                    <label>Si</label>
+
+                    <input type="radio" name="Disponible" value="false" checked/>
+                    <label>No</label>
+                }
+            </div>
+            <button type="submit" class="btn btn-dark">Editar</button>
+        </form>
+    </div>
+</body>
+</html>

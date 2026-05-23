@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VistaAgregar</title>
+    <!--Agregando los archivos de bootstrap-->
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Nuevo Registro</h1>
+
+        @if (TempData["validaciones"] != null)
+        {
+            <div class="alert alert-warning">
+                @Html.Raw(TempData["validaciones"])
+            </div>
+        }
+
+        <form action="/Producto/Agregar" method="post">
+            <label>Descripción</label>
+            <input type="text" name="Descripcion" class="form-control" required />
+            <br />
+            <label>Precio</label>
+            <input type="text" name="Precio" class="form-control" required />
+            <br />
+            <label>Fecha Ingreso</label>
+            <input type="date" name="FechaIngreso" class="form-control" required />
+            <br />
+            <label>¿Esta Disponible?</label>
+            <div>
+                <input type="radio" name="Disponible" value="true" required />
+                <label>Si</label>
+
+                <input type="radio" name="Disponible" value="false" />
+                <label>No</label>
+            </div>
+            <button type="submit" class="btn btn-dark">Registrar</button>
+        </form>
+
+    </div>
+</body>
+</html>
