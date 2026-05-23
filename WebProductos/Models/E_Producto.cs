@@ -9,17 +9,19 @@ namespace WebProductos.Models
     {
         //Propiedades simples
         public int IdProducto { get; set; }
-        public int IdSucursal { get; set; }
-
         public string Descripcion { get; set; }
         public decimal Precio { get; set; }
+        public string Descripcion { get; set; }
+        public int IdProducto { get; set; }
         public DateTime FechaIngreso { get; set; }
-        public bool Disponible { get; set; }
+        
+        public decimal PrecioDescuento { get; set; }
+
+        public int IdSucursal { get; set; }
+        
+        public string Sucursal { get; set; }
 
         public string Gerente { get; set; }
-
-        public int Sucursal { get; set; }
-
         //Propiedades de solo lectura
         public string DisponibleHtml
         {
