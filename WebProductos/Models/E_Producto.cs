@@ -14,6 +14,8 @@ namespace WebProductos.Models
         public DateTime FechaIngreso { get; set; }
         public bool Disponible { get; set; }
 
+        public string Gerente { get; set; }
+
         //Propiedades de solo lectura
         public string DisponibleHtml
         {
