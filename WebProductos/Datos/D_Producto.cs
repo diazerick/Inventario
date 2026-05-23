@@ -21,7 +21,7 @@ namespace WebProductos.Datos
             try
             {
                 conexion.Open();
-                string query = "SELECTTT idProducto,descripcion,precio,fechaIngreso,disponible FROM Productos";
+                string query = "SELECT idProducto,descripcion,precio,fechaIngreso,disponible FROM Productos";
                 SqlCommand comando = new SqlCommand(query, conexion);
                 //Creamos un SqlDataReader para guardar los resultados de ejecutar el query
                 SqlDataReader reader = comando.ExecuteReader();
