@@ -8,6 +8,7 @@
         public decimal Precio { get; set; }
         public DateTime FechaIngreso { get; set; }
         public bool Disponible { get; set; }
+        public int PrecioDescuento { get; set; }
 
         //Propiedades full o de solo de lectura
         public string DisponibleTexto
